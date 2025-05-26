@@ -215,11 +215,15 @@ body {
 }
 
 .project-container.chili {
-  background-color: #8B1C1C; /* chiliröd */
+  background-color: #8B1C1C;
 }
 
 .project-container.leontina {
-  background-color: #923CB5; /* lila */
+  background-color: #923CB5;
+}
+
+.project-container.whack {
+  background-color: #ff6f00; /* orange för arcade-spelkänsla */
 }
 
 .project-title {
@@ -236,10 +240,9 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
-  max-width: 700px; /* 👈 Lägg till detta värde */
+  max-width: 700px;
   box-sizing: border-box;
 }
-
 
 .project-container.chili .project-box {
   background-color: #FDECEA;
@@ -249,6 +252,11 @@ body {
 .project-container.leontina .project-box {
   background-color: #F6ECFA;
   color: #6C2D91;
+}
+
+.project-container.whack .project-box {
+  background-color: #FFF3E0;
+  color: #e65100;
 }
 
 /* === Accordion === */
@@ -285,7 +293,8 @@ body {
 }
 
 .accordion-content.chili ul,
-.accordion-content.leontina ul {
+.accordion-content.leontina ul,
+.accordion-content.whack ul {
   list-style-type: none;
   padding-left: 1rem;
 }

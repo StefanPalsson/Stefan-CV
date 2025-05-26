@@ -27,29 +27,28 @@ export default {
   showDetails: "\u25bc Show technologies & methods",
   hideDetails: "\u25b2 Hide technologies & methods",
   meditation: "Music upload, offline support, Firebase.",
-  whack: "Group project with leaderboard, UI, and backend.",
   langSwitchText: "Change language",
   tekniker: {
-    Frontend: ["\ud83c\udf10 HTML5", "\ud83c\udfa8 CSS", "\ud83d\udccc JavaScript", "\ud83c\udf00 TypeScript", "\u269b\ufe0f React", "\ud83d\udd3a Angular", "\ud83d\ude80 Next.js", "\ud83c\udfa8 SASS", "\ud83c\udfa8 Tailwind CSS", "\ud83d\udcd8 Storybook", "\ud83d\udcf1 Responsive Design", "\ud83c\udf17 Dark mode"],
-    "Backend & Databases": ["\ud83c\udf3f Node.js", "\ud83d\udc18 PHP", "\ud83d\udd17 API", "\ud83d\udd04 REST API", "\ud83c\udf43 MongoDB", "\ud83d\udc83 MySQL", "\ud83d\udcc2 SQL", "\ud83d\udece\ufe0f E-commerce DB", "\ud83d\udcb3 Payment Systems", "\ud83d\udcbb WebSockets"],
-    "CMS & E-commerce": ["\ud83d\udcf0 Headless WP", "\ud83d\udece\ufe0f E-commerce Dev", "\ud83d\udece\ufe0f WooCommerce"],
-    "Tools & Frameworks": ["\ud83d\udee0\ufe0f Architecture", "\ud83c\udfaf Figma", "\ud83d\udcbb Visual Studio Code", "\ud83e\udd1d Git", "\ud83d\udcd8 Storybook", "\ud83d\uddd3 Agile Methods", "\ud83d\udcca Kanban", "\ud83d\udd01 jQuery"],
-    Other: ["\ud83d\udcd0 UX/UI", "\ud83d\udd0c Integrations", "\ud83c\udf0d SEO", "\ud83d\udea1 Security", "\u26a1 Testing", "\ud83d\udd01 Agile Workflows"]
+    Frontend: ["🌐 HTML5", "🎨 CSS", "📌 JavaScript", "🌀 TypeScript", "⚛️ React", "🔺 Angular", "🚀 Next.js", "🎨 SASS", "🎨 Tailwind CSS", "📘 Storybook", "📱 Responsive Design", "🌗 Dark mode"],
+    "Backend & Databases": ["🌿 Node.js", "🐘 PHP", "🔗 API", "🔄 REST API", "🌳 MongoDB", "💃 MySQL", "📂 SQL", "📬 E-commerce DB", "💳 Payment Systems", "💻 WebSockets"],
+    "CMS & E-commerce": ["📰 Headless WP", "📬 E-commerce Dev", "📬 WooCommerce"],
+    "Tools & Frameworks": ["🛠️ Architecture", "🎯 Figma", "💻 Visual Studio Code", "🤝 Git", "📘 Storybook", "🗓️ Agile Methods", "📊 Kanban", "🔁 jQuery"],
+    Other: ["📐 UX/UI", "🔌 Integrations", "🌍 SEO", "💡 Security", "⚡ Testing", "🔁 Agile Workflows"]
   },
-  styrkor: ["\ud83c\udfaf Goal-oriented", "\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc66 Team Player", "\ud83e\uddd8\u200d\u2642\ufe0f Patient", "\ud83d\ude80 Driven", "\ud83d\udee0\ufe0f Problem Solver", "\ud83e\udde0 Quick Learner", "\ud83c\udfa8 Creative", "\ud83d\uddd3 Organized", "\ud83d\udce2 Communicative"],
+  styrkor: ["🎯 Goal-oriented", "👨‍👧‍👦 Team Player", "🧘‍♂️ Patient", "🚀 Driven", "🛠️ Problem Solver", "🧠 Quick Learner", "🎨 Creative", "🗓️ Organized", "📢 Communicative"],
   chili: {
     desc: "React app to explore and search chili varieties.",
     detail: "Users can browse chili types, learn about heat, flavor and origin. UI built with React Router, conditional rendering and responsive design.",
     points: [
-      "\ud83d\udd04 React Router v6",
-      "\u2699\ufe0f useState, useParams, useNavigate",
-      "\ud83d\udd0e Real-time search & filtering",
-      "\ud83d\udd04 Dynamic rendering with URL params",
-      "\ud83d\udccf Responsive layout with Flexbox",
-      "\ud83d\udd8c\ufe0f CSS animations, typography, color contrast",
-      "\ud83d\udee0\ufe0f Custom components",
-      "\ud83d\udd1d Sticky header",
-      "\ud83d\udd8c\ufe0f Custom cursor PNG"
+      "🔄 React Router v6",
+      "⚙️ useState, useParams, useNavigate",
+      "🔎 Real-time search & filtering",
+      "🔄 Dynamic rendering with URL params",
+      "📏 Responsive layout with Flexbox",
+      "🖌️ CSS animations, typography, color contrast",
+      "🛠️ Custom components",
+      "🔝 Sticky header",
+      "🖌️ Custom cursor PNG"
     ],
     note: "Ongoing project – new features planned.",
     badges: ["React", "React Router", "useState", "useNavigate", "useParams", "Custom Hooks", "CSS Modules", "Flexbox"]
@@ -58,15 +57,28 @@ export default {
     desc: "Angular blog for my daughter with stories and photos.",
     detail: "Child-friendly layout with custom components and carousel. Angular-based architecture with routing and localStorage.",
     points: [
-      "\ud83d\udccf Angular component-based architecture",
-      "\ud83d\udddd RouterModule & dynamic URLs",
-      "\ud83d\udd12 RouteGuard for admin",
-      "\ud83d\udcc4 FormsModule for contact/comments",
-      "\ud83c\udfa1 Custom carousel",
-      "\ud83d\udcdd PostService with localStorage",
-      "\ud83d\udcd0 UX tailored for children"
+      "📏 Angular component-based architecture",
+      "🗂️ RouterModule & dynamic URLs",
+      "🔒 RouteGuard for admin",
+      "📄 FormsModule for contact/comments",
+      "🎡 Custom carousel",
+      "📝 PostService with localStorage",
+      "📐 UX tailored for children"
     ],
     note: "Designed for storytelling and easy interaction.",
     badges: ["Angular", "RouterModule", "RouteGuard", "FormsModule", "localStorage", "UX for Kids", "Responsive CSS"]
+  },
+  whack: {
+    desc: "Group project with leaderboard, UI, and backend.",
+    detail: "We built the game in Vanilla JS, and I focused on modals, DOM manipulation, and Git collaboration.",
+    points: [
+      "🖱️ DOM manipulation",
+      "🎯 Event listeners",
+      "⏱️ Timers and timeouts",
+      "🔊 Audio API and image assets",
+      "📊 Modals and leaderboard"
+    ],
+    badges: ["JavaScript", "HTML", "CSS", "Local Assets"],
+    note: "Whack-a-mole game built as a team project focusing on collaboration and version control."
   }
 };

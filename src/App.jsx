@@ -9,6 +9,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState("tekniker");
   const [showChiliDetails, setShowChiliDetails] = useState(false);
   const [showLeontinaDetails, setShowLeontinaDetails] = useState(false);
+  const [showWhackDetails, setShowWhackDetails] = useState(false);
   const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
 
   const t = languages[lang];
@@ -135,6 +136,7 @@ export default function App() {
         <section className="project-section">
           <h2>{t.projects}</h2>
           <ul>
+            {/* ChiliExplorer */}
             <li>
               <div className="project-container chili">
                 <div className="project-box">
@@ -142,14 +144,12 @@ export default function App() {
                   <p>– {t.chili.desc}</p>
                   <p>{t.chili.detail}</p>
                 </div>
-
                 <button
                   className="accordion-button"
                   onClick={() => setShowChiliDetails(!showChiliDetails)}
                 >
                   {showChiliDetails ? t.hideDetails : t.showDetails}
                 </button>
-
                 {showChiliDetails && (
                   <div className="accordion-content chili">
                     <h4>🧪 {t.techAndMethods}</h4>
@@ -161,13 +161,11 @@ export default function App() {
                     <p style={{ fontStyle: "italic" }}>{t.chili.note}</p>
                   </div>
                 )}
-
                 <div className="tech-badges">
                   {t.chili.badges.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
-
                 <div className="project-image-grid">
                   <img src="/chiliexplorer.png" alt="ChiliExplorer 1" />
                   <img src="/chiliexplorer2.png" alt="ChiliExplorer 2" />
@@ -175,6 +173,7 @@ export default function App() {
               </div>
             </li>
 
+            {/* Leontinas-blog */}
             <li>
               <div className="project-container leontina">
                 <div className="project-box">
@@ -182,14 +181,12 @@ export default function App() {
                   <p>– {t.leontina.desc}</p>
                   <p>{t.leontina.detail}</p>
                 </div>
-
                 <button
                   className="accordion-button"
                   onClick={() => setShowLeontinaDetails(!showLeontinaDetails)}
                 >
                   {showLeontinaDetails ? t.hideDetails : t.showDetails}
                 </button>
-
                 {showLeontinaDetails && (
                   <div className="accordion-content leontina">
                     <h4>🧪 {t.techAndMethods}</h4>
@@ -201,13 +198,11 @@ export default function App() {
                     <p style={{ fontStyle: "italic" }}>{t.leontina.note}</p>
                   </div>
                 )}
-
                 <div className="tech-badges">
                   {t.leontina.badges.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
-
                 <div className="project-image-grid">
                   <img src="/leontina1.png" alt="Leontinas-blog preview 1" />
                   <img src="/leontina2.png" alt="Leontinas-blog preview 2" />
@@ -216,11 +211,40 @@ export default function App() {
               </div>
             </li>
 
+            {/* Whack-a-Mole */}
             <li>
-              <p className="project-title">Meditationsappen</p> – {t.meditation}
-            </li>
-            <li>
-              <p className="project-title">Whack-a-Mole</p> – {t.whack}
+              <div className="project-container whack">
+                <div className="project-box">
+                  <p className="project-title">Whack-a-Mole</p>
+                  <p>– {t.whack.desc}</p>
+                  <p>{t.whack.detail}</p>
+                </div>
+                <button
+                  className="accordion-button"
+                  onClick={() => setShowWhackDetails(!showWhackDetails)}
+                >
+                  {showWhackDetails ? t.hideDetails : t.showDetails}
+                </button>
+                {showWhackDetails && (
+                  <div className="accordion-content whack">
+                    <h4>🧪 {t.techAndMethods}</h4>
+                    <ul className="tech-icon-list">
+                      {t.whack.points.map((p, i) => (
+                        <li key={i}>{p}</li>
+                      ))}
+                    </ul>
+                    <p style={{ fontStyle: "italic" }}>{t.whack.note}</p>
+                  </div>
+                )}
+                <div className="tech-badges">
+                  {t.whack.badges.map((b, i) => (
+                    <span key={i}>{b}</span>
+                  ))}
+                </div>
+                <div className="project-image-grid">
+                  <img src="/whack-a-mole.png" alt="Whack-a-Mole preview" />
+                </div>
+              </div>
             </li>
           </ul>
         </section>
