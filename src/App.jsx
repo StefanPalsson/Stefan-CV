@@ -115,10 +115,7 @@ export default function App() {
           <div className="tech-tags">
             {activeTab === "tekniker"
               ? Object.entries(t.tekniker).map(([kategori, tags]) => (
-                  <div
-                    key={kategori}
-                    style={{ marginBottom: "1rem", width: "100%" }}
-                  >
+                  <div key={kategori} style={{ marginBottom: "1rem", width: "100%" }}>
                     <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>
                       {kategori}
                     </h3>
@@ -139,79 +136,83 @@ export default function App() {
           <h2>{t.projects}</h2>
           <ul>
             <li>
-              <div className="project-box">
-                <p className="project-title">ChiliExplorer</p>
-                <p>– {t.chili.desc}</p>
-                <p>{t.chili.detail}</p>
-              </div>
-
-              <button
-                className="accordion-button"
-                onClick={() => setShowChiliDetails(!showChiliDetails)}
-              >
-                {showChiliDetails ? t.hideDetails : t.showDetails}
-              </button>
-
-              {showChiliDetails && (
-                <div className="accordion-content chili">
-                  <h4>🧪 {t.techAndMethods}</h4>
-                  <ul className="tech-icon-list">
-                    {t.chili.points.map((p, i) => (
-                      <li key={i}>{p}</li>
-                    ))}
-                  </ul>
-                  <p style={{ fontStyle: "italic" }}>{t.chili.note}</p>
+              <div className="project-container chili">
+                <div className="project-box">
+                  <p className="project-title">ChiliExplorer</p>
+                  <p>– {t.chili.desc}</p>
+                  <p>{t.chili.detail}</p>
                 </div>
-              )}
 
-              <div className="tech-badges">
-                {t.chili.badges.map((b, i) => (
-                  <span key={i}>{b}</span>
-                ))}
-              </div>
+                <button
+                  className="accordion-button"
+                  onClick={() => setShowChiliDetails(!showChiliDetails)}
+                >
+                  {showChiliDetails ? t.hideDetails : t.showDetails}
+                </button>
 
-              <div className="project-image-grid">
-                <img src="/chiliexplorer.png" alt="ChiliExplorer 1" />
-                <img src="/chiliexplorer2.png" alt="ChiliExplorer 2" />
+                {showChiliDetails && (
+                  <div className="accordion-content chili">
+                    <h4>🧪 {t.techAndMethods}</h4>
+                    <ul className="tech-icon-list">
+                      {t.chili.points.map((p, i) => (
+                        <li key={i}>{p}</li>
+                      ))}
+                    </ul>
+                    <p style={{ fontStyle: "italic" }}>{t.chili.note}</p>
+                  </div>
+                )}
+
+                <div className="tech-badges">
+                  {t.chili.badges.map((b, i) => (
+                    <span key={i}>{b}</span>
+                  ))}
+                </div>
+
+                <div className="project-image-grid">
+                  <img src="/chiliexplorer.png" alt="ChiliExplorer 1" />
+                  <img src="/chiliexplorer2.png" alt="ChiliExplorer 2" />
+                </div>
               </div>
             </li>
 
             <li>
-              <div className="project-box">
-                <p className="project-title">Leontinas-blog</p>
-                <p>– {t.leontina.desc}</p>
-                <p>{t.leontina.detail}</p>
-              </div>
-
-              <button
-                className="accordion-button"
-                onClick={() => setShowLeontinaDetails(!showLeontinaDetails)}
-              >
-                {showLeontinaDetails ? t.hideDetails : t.showDetails}
-              </button>
-
-              {showLeontinaDetails && (
-                <div className="accordion-content leontina">
-                  <h4>🧪 {t.techAndMethods}</h4>
-                  <ul className="tech-icon-list">
-                    {t.leontina.points.map((p, i) => (
-                      <li key={i}>{p}</li>
-                    ))}
-                  </ul>
-                  <p style={{ fontStyle: "italic" }}>{t.leontina.note}</p>
+              <div className="project-container leontina">
+                <div className="project-box">
+                  <p className="project-title">Leontinas-blog</p>
+                  <p>– {t.leontina.desc}</p>
+                  <p>{t.leontina.detail}</p>
                 </div>
-              )}
 
-              <div className="tech-badges">
-                {t.leontina.badges.map((b, i) => (
-                  <span key={i}>{b}</span>
-                ))}
-              </div>
+                <button
+                  className="accordion-button"
+                  onClick={() => setShowLeontinaDetails(!showLeontinaDetails)}
+                >
+                  {showLeontinaDetails ? t.hideDetails : t.showDetails}
+                </button>
 
-              <div className="project-image-grid">
-                <img src="/leontina1.png" alt="Leontinas-blog preview 1" />
-                <img src="/leontina2.png" alt="Leontinas-blog preview 2" />
-                <img src="/leontina3.png" alt="Leontinas-blog preview 3" />
+                {showLeontinaDetails && (
+                  <div className="accordion-content leontina">
+                    <h4>🧪 {t.techAndMethods}</h4>
+                    <ul className="tech-icon-list">
+                      {t.leontina.points.map((p, i) => (
+                        <li key={i}>{p}</li>
+                      ))}
+                    </ul>
+                    <p style={{ fontStyle: "italic" }}>{t.leontina.note}</p>
+                  </div>
+                )}
+
+                <div className="tech-badges">
+                  {t.leontina.badges.map((b, i) => (
+                    <span key={i}>{b}</span>
+                  ))}
+                </div>
+
+                <div className="project-image-grid">
+                  <img src="/leontina1.png" alt="Leontinas-blog preview 1" />
+                  <img src="/leontina2.png" alt="Leontinas-blog preview 2" />
+                  <img src="/leontina3.png" alt="Leontinas-blog preview 3" />
+                </div>
               </div>
             </li>
 

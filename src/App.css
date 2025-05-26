@@ -202,8 +202,24 @@ body {
 }
 
 .project-section ul {
-  list-style: none; /* 🟢 Tar bort prickar */
+  list-style: none;
   padding-left: 0;
+}
+
+.project-container {
+  border-radius: 14px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  transition: background-color 0.3s ease;
+}
+
+.project-container.chili {
+  background-color: #8B1C1C; /* chiliröd */
+}
+
+.project-container.leontina {
+  background-color: #923CB5; /* lila */
 }
 
 .project-title {
@@ -220,8 +236,19 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
-  max-width: 100%;
+  max-width: 700px; /* 👈 Lägg till detta värde */
   box-sizing: border-box;
+}
+
+
+.project-container.chili .project-box {
+  background-color: #FDECEA;
+  color: #8B1C1C;
+}
+
+.project-container.leontina .project-box {
+  background-color: #F6ECFA;
+  color: #6C2D91;
 }
 
 /* === Accordion === */
