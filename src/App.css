@@ -1,4 +1,4 @@
-/* === Allmänt === */
+/* === Globalt: Body & Wrapper === */
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -54,9 +54,14 @@ body {
   color: #f9dc5c;
 }
 
-.sidebar p,
+.sidebar p {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
 .sidebar li {
   font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 /* === Main Content === */
@@ -75,6 +80,7 @@ body {
   justify-content: flex-start;
   margin-left: 2rem;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .course-box {
@@ -102,6 +108,7 @@ body {
   font-size: 0.95rem;
 }
 
+/* === Om Mig box === */
 .about-section {
   flex: 1;
   background: linear-gradient(to bottom right, #f0f4f8, #e1edf4);
@@ -128,11 +135,12 @@ body {
   border-radius: 2px;
 }
 
-/* === Tekniker/Styrkor === */
+/* === Tekniker / Styrkor === */
 .tab-buttons {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .tab-buttons button {
@@ -161,6 +169,13 @@ body {
   transform: scale(1.05);
 }
 
+.tab-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* === Teknik-taggar & badges === */
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -186,6 +201,11 @@ body {
   margin-top: 2rem;
 }
 
+.project-section ul {
+  list-style: none; /* 🟢 Tar bort prickar */
+  padding-left: 0;
+}
+
 .project-title {
   font-size: 1.3rem;
   font-weight: bold;
@@ -193,10 +213,19 @@ body {
   margin-bottom: 0.3rem;
 }
 
+.project-box {
+  background-color: white;
+  color: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* === Accordion === */
 .accordion-button {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   background-color: #2c3e50;
   color: white;
   border: none;
@@ -206,6 +235,8 @@ body {
   font-weight: bold;
   font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 0.5rem 0 1rem 0;
 }
 
 .accordion-button:hover {
@@ -214,28 +245,29 @@ body {
 }
 
 .accordion-content {
-  margin-top: 1rem;
   background-color: #f1f1f1;
   border-left: 4px solid #00796b;
   padding: 1rem;
   border-radius: 8px;
   color: #222;
+  margin-bottom: 1rem;
 }
 
 .accordion-content li {
   margin-bottom: 0.5rem;
 }
 
-/* Unik listikon för ChiliExplorer */
-.accordion-content.chili ul {
-  list-style-type: "🌶 ";
-  padding-left: 1rem;
-}
-
-/* Ingen listikon för Leontinas-blog */
+.accordion-content.chili ul,
 .accordion-content.leontina ul {
   list-style-type: none;
   padding-left: 1rem;
+}
+
+.tech-icon-list li {
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* === Projektbilder === */
@@ -253,9 +285,82 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* === Responsivitet === */
+/* === Kursbox & språkknapp === */
+.course-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.lang-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.finger-icon {
+  font-size: 1.6rem;
+  animation: pointWiggle 1.5s infinite;
+}
+
+@keyframes pointWiggle {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+
+.flag-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.flag-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.lang-label {
+  font-size: 1rem;
+  color: #0c3d56;
+  font-weight: 600;
+  margin-left: 0.4rem;
+  user-select: none;
+  animation: pulseText 2s ease-in-out infinite;
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
+}
+
+/* === Tillgänglighet: Fokus-stöd === */
+button:focus,
+.flag-icon:focus {
+  outline: 2px solid #f9dc5c;
+  outline-offset: 2px;
+}
+
+/* === Mobilanpassning === */
 @media (max-width: 600px) {
-  .project-image-grid img {
-    width: 100%;
+  .course-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
