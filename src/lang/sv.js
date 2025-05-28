@@ -36,6 +36,8 @@ export default {
     Övrigt: ["📐 UX/UI", "🔌 Integrationer", "🌍 SEO", "💡 Säkerhet", "⚡ Testning", "🔁 Agila metoder"]
   },
   styrkor: ["🎯 Målmedveten", "👨‍👧‍👦 Lagspelare", "🧘‍♂️ Tålmodig", "🚀 Driven", "🛠️ Lösningsorienterad", "🧠 Snabblärd", "🎨 Kreativ", "🗓️ Strukturerad", "📢 Kommunikativ"],
+  liaButton: "LIA-info",
+workButton: "Tidigare jobb",
   chili: {
     desc: "Webbapp i React för att visa och söka efter chilisorter.",
     detail: "Användare kan läsa om styrka, smak och ursprung. UI är byggt med React Router och har dynamisk routing och responsiv design.",

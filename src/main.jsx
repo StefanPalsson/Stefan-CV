@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import './App.css'; // eller index.css, beroende på vad du döpt din css till
+import AppRouter from './AppRouter.jsx'; // Du har redan skapat denna
+import './App.css'; // Behåll detta som det är
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <AppRouter /> {/* 👈 Detta ska användas, inte App */}
   </React.StrictMode>
 );

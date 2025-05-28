@@ -169,6 +169,17 @@ body {
   transform: scale(1.05);
 }
 
+.nav-button {
+  white-space: nowrap;
+  min-width: 100px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+
 .tab-wrapper {
   display: flex;
   align-items: center;
@@ -431,6 +442,10 @@ body {
   width: 30%; /* eller prova 40% eller 300px beroende på vad som ser bäst ut */
   max-width: 300px;
   height: auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 

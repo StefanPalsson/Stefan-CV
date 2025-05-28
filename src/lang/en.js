@@ -36,6 +36,8 @@ export default {
     Other: ["📐 UX/UI", "🔌 Integrations", "🌍 SEO", "💡 Security", "⚡ Testing", "🔁 Agile Workflows"]
   },
   styrkor: ["🎯 Goal-oriented", "👨‍👧‍👦 Team Player", "🧘‍♂️ Patient", "🚀 Driven", "🛠️ Problem Solver", "🧠 Quick Learner", "🎨 Creative", "🗓️ Organized", "📢 Communicative"],
+  liaButton: "LIA info",
+workButton: "Work history",
   chili: {
     desc: "React app to explore and search chili varieties.",
     detail: "Users can browse chili types, learn about heat, flavor and origin. UI built with React Router, conditional rendering and responsive design.",

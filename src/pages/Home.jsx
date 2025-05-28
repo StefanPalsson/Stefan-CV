@@ -1,11 +1,13 @@
-import "./App.css";
+import "../App.css";
 import { useState } from "react";
-import en from "./lang/en";
-import sv from "./lang/sv";
+import en from "../lang/en";
+import sv from "../lang/sv";
+import { Link } from "react-router-dom";
+
 
 const languages = { en, sv };
 
-export default function App() {
+export default function Home() {
   const [activeTab, setActiveTab] = useState("tekniker");
   const [showChiliDetails, setShowChiliDetails] = useState(false);
   const [showLeontinaDetails, setShowLeontinaDetails] = useState(false);
@@ -96,26 +98,43 @@ export default function App() {
 
         <section>
           <h2>{t.skills}</h2>
-          <div className="tab-buttons">
-            <div className="tab-wrapper">
-              <span className="finger-icon">👉</span>
-              <button
-                onClick={() => setActiveTab("tekniker")}
-                className={activeTab === "tekniker" ? "active" : ""}
-              >
-                {t.techTab}
-              </button>
-            </div>
-            <div className="tab-wrapper">
-              <span className="finger-icon">👉</span>
-              <button
-                onClick={() => setActiveTab("styrkor")}
-                className={activeTab === "styrkor" ? "active" : ""}
-              >
-                {t.strengthTab}
-              </button>
-            </div>
-          </div>
+          <div className="tab-buttons" style={{ flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>
+  <div className="tab-wrapper">
+    <span className="finger-icon">👉</span>
+    <button
+  onClick={() => setActiveTab("tekniker")}
+  className={`accordion-button nav-button ${activeTab === "tekniker" ? "active" : ""}`}
+>
+  🧪 {t.techTab}
+</button>
+<span className="finger-icon">👉</span>
+<button
+  onClick={() => setActiveTab("styrkor")}
+  className={`accordion-button nav-button ${activeTab === "styrkor" ? "active" : ""}`}
+>
+  💪 {t.strengthTab}
+</button>
+
+  </div>
+  <div className="tab-wrapper">
+    <span className="finger-icon">👉</span>
+    <Link to="/lia-info">
+  <button className="accordion-button nav-button">
+    🛠️ {t.liaButton}
+  </button>
+</Link>
+  </div>
+  <div className="tab-wrapper">
+    <span className="finger-icon">👉</span>
+    <Link to="/work-history">
+  <button className="accordion-button nav-button">
+    💼 {t.workButton}
+  </button>
+</Link>
+  </div>
+</div>
+
+
 
           <div className="tech-tags">
             {activeTab === "tekniker"
