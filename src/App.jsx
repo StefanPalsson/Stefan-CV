@@ -12,6 +12,7 @@ export default function App() {
   const [showWhackDetails, setShowWhackDetails] = useState(false);
   const [showTime4FamilyDetails, setShowTime4FamilyDetails] = useState(false);
   const [showTodoDetails, setShowTodoDetails] = useState(false);
+  const [showRedditDetails, setShowRedditDetails] = useState(false);
   const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
 
   const t = languages[lang];
@@ -315,6 +316,41 @@ export default function App() {
     </div>
     <div className="project-image-grid">
       <img src="/todo.png" alt="Todo List preview" />
+    </div>
+  </div>
+</li>
+{/* Mini Reddit Clone */}
+<li>
+  <div className="project-container reddit">
+    <div className="project-box">
+      <p className="project-title">Mini Reddit Clone</p>
+      <p>{t.reddit.desc}</p>
+      <p>{t.reddit.detail}</p>
+    </div>
+    <button
+      className="accordion-button"
+      onClick={() => setShowRedditDetails(!showRedditDetails)}
+    >
+      {showRedditDetails ? t.hideDetails : t.showDetails}
+    </button>
+    {showRedditDetails && (
+      <div className="accordion-content reddit">
+        <h4>🧪 {t.techAndMethods}</h4>
+        <ul className="tech-icon-list">
+          {t.reddit.points.map((p, i) => (
+            <li key={i}>{p}</li>
+          ))}
+        </ul>
+        <p style={{ fontStyle: "italic" }}>{t.reddit.note}</p>
+      </div>
+    )}
+    <div className="tech-badges">
+      {t.reddit.badges.map((b, i) => (
+        <span key={i}>{b}</span>
+      ))}
+    </div>
+    <div className="project-image-grid">
+      <img src="/mini-reddit.png" alt="Mini Reddit Clone preview" />
     </div>
   </div>
 </li>

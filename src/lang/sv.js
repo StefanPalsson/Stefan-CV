@@ -124,5 +124,20 @@ export default {
     ],
     note: "Byggt med verklighetsnära struktur, säkerhet och tydlig rollfördelning.",
     badges: ["C#", ".NET 8", "ASP.NET Core", "EF Core", "PostgreSQL", "JWT", "Identity", "Swagger", "REST API", "Git"]
+  },
+  reddit: {
+    desc: "Mini Reddit-klon med React och Axios.",
+    detail: "Appen hämtar inlägg från ett öppet API och visar dem på startsidan. Användaren kan klicka för att se ett enskilt inlägg. Routing hanteras med React Router.",
+    points: [
+      "🔄 React Router v6 med <Routes> och dynamiska URL:er",
+      "📡 Axios för API-anrop",
+      "⚙️ useEffect för datahämtning",
+      "💬 useState för hantering av laddning och fel",
+      "🧱 Komponentbaserad arkitektur",
+      "🧪 Console logging för felsökning",
+      "📦 JSON API-integrering (dummyjson.com)"
+    ],
+    note: "Lättviktig React-app för att visa API-data i bloggformat.",
+    badges: ["React", "Axios", "React Router", "API", "useEffect", "useState"]
   }
 };

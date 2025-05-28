@@ -103,7 +103,7 @@ export default {
     note: "Built to preserve and highlight family trips and moments.",
     badges: ["React", "TypeScript", "React Router", "Dark Mode", "UX/UI", "Responsive Design"]
   },
-   todo: {
+  todo: {
     desc: "Collaborative project: secure todo API with C# and ASP.NET.",
     detail: "Built in a group using ASP.NET Core Identity with role-based access control, Entity Framework Core with PostgreSQL, and layered architecture. All endpoints are protected via policies and JWT bearer tokens.",
     points: [
@@ -120,5 +120,20 @@ export default {
     ],
     note: "Built as a team project with real-world structure and secure access handling.",
     badges: ["C#", ".NET 8", "ASP.NET Core", "EF Core", "PostgreSQL", "JWT", "Identity", "Swagger", "REST API", "Git"]
+  },
+  reddit: {
+    desc: "Mini Reddit clone with dummy API and post routing.",
+    detail: "A simplified Reddit-style app built in React using axios, dynamic routing, reusable components and real-time state updates.",
+    points: [
+      "⚛️ React functional components with hooks",
+      "🔁 useState & useEffect for async data",
+      "📡 Axios for fetching posts from dummyjson.com",
+      "🧭 React Router v6 for dynamic routing",
+      "🧱 Component-based file structure",
+      "💬 Separate components for PostList, Comment, CreatePost, SinglePost",
+      "🔄 Real-time API updates and error handling"
+    ],
+    note: "Frontend mini-project to simulate post/thread structure and loading data from an API.",
+    badges: ["React", "Axios", "React Router", "useEffect", "useState", "Dummy API", "Hooks", "JSX"]
   }
 };

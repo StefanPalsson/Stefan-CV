@@ -244,6 +244,25 @@ body {
   color: #1a1a1a;
 }
 
+/* === Mini Reddit Clone === */
+.project-container.reddit {
+  background-color: #d63031; /* en stark reddit-röd nyans */
+}
+
+.project-container.reddit .project-box {
+  background-color: #fbecec;
+  color: #7f0000;
+}
+
+.project-image-grid img.reddit-img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
 
 
 .project-title {
