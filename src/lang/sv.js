@@ -139,5 +139,20 @@ export default {
     ],
     note: "Lättviktig React-app för att visa API-data i bloggformat.",
     badges: ["React", "Axios", "React Router", "API", "useEffect", "useState"]
-  }
+  },
+  weather: {
+  desc: "Väderapp byggd i vanilla JavaScript med OpenWeatherMap API.",
+  detail: "Användaren kan söka efter en stad och se väderdata i realtid – inklusive temperatur, vind, lufttryck, fuktighet och tid. Allt byggt utan ramverk.",
+  points: [
+    "📡 Integration med OpenWeatherMap API",
+    "🔍 Dynamisk stadssökning med inputfält",
+    "⏱️ Live-klocka som uppdateras varje sekund",
+    "🌡️ Visning av temperatur, tryck, luftfuktighet och vind",
+    "🖱️ DOM-manipulation och event listeners",
+    "🎨 CSS-design med bakgrundsbild och responsiv layout",
+    "🔁 Automatiska API-uppdateringar var 30:e minut"
+  ],
+  note: "Byggd med endast HTML, CSS och JavaScript – utan ramverk.",
+  badges: ["JavaScript", "OpenWeatherMap API", "DOM", "Eventhantering", "Responsiv CSS", "HTML", "Fetch"]
+}
 };

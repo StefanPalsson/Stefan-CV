@@ -262,6 +262,23 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+.project-container.weather {
+  background-color: #2196f3; /* blå för väder */
+}
+
+.project-container.weather .project-box {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.project-image-grid img.weather-img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 
 
 

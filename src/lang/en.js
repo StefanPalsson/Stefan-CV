@@ -135,5 +135,21 @@ export default {
     ],
     note: "Frontend mini-project to simulate post/thread structure and loading data from an API.",
     badges: ["React", "Axios", "React Router", "useEffect", "useState", "Dummy API", "Hooks", "JSX"]
-  }
+  },
+  weather: {
+  desc: "Vanilla JavaScript weather app using OpenWeatherMap API.",
+  detail: "Fetches and displays real-time weather and clock for any city. Built with pure JavaScript and styled with responsive CSS.",
+  points: [
+    "📡 OpenWeatherMap API integration",
+    "🔍 Dynamic city search with user input",
+    "⏱️ Live clock updating every second",
+    "📊 Display of temperature, pressure, humidity, wind",
+    "🖱️ DOM manipulation with event listeners",
+    "🎨 Custom CSS with responsive background image",
+    "🧪 Error-free API calls with JSON parsing"
+  ],
+  note: "Lightweight app built without frameworks — pure HTML, CSS, and JS.",
+  badges: ["JavaScript", "OpenWeatherMap API", "DOM", "Event Handling", "Responsive CSS", "HTML", "Fetch"]
+}
+
 };
