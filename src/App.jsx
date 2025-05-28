@@ -23,7 +23,7 @@ export default function App() {
   return (
     <div className="cv-wrapper">
       <aside className="sidebar">
-        <img src="/jag2.jpg" alt="Stefan Andersson" className="profile-pic" />
+        <img src="/jag2.jpg" alt="Stefan Pålsson" className="profile-pic" />
         <h1 className="name">Stefan Pålsson</h1>
         <h1 className="title">{t.title}</h1>
         <p className="school">{t.education}</p>
@@ -206,7 +206,6 @@ export default function App() {
                 <div className="project-image-grid">
                   <img src="/leontina1.png" alt="Leontinas-blog preview 1" />
                   <img src="/leontina2.png" alt="Leontinas-blog preview 2" />
-                  <img src="/leontina3.png" alt="Leontinas-blog preview 3" />
                 </div>
               </div>
             </li>
@@ -242,7 +241,7 @@ export default function App() {
                   ))}
                 </div>
                 <div className="project-image-grid">
-                  <img src="/whack-a-mole.png" alt="Whack-a-Mole preview" />
+                  <img src="/whack-a-mole2.png" alt="Whack-a-Mole preview" className="whack-img" />
                 </div>
               </div>
             </li>

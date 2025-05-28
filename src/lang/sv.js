@@ -68,17 +68,26 @@ export default {
     note: "Byggd för berättande och enkel interaktion.",
     badges: ["Angular", "RouterModule", "RouteGuard", "FormsModule", "localStorage", "UX för barn", "Responsiv CSS"]
   },
-  whack: {
+ whack: {
     desc: "Grupprojekt med topplista, UI och backend.",
-    detail: "Vi byggde spelet i Vanilla JS, och jag jobbade med modaler, DOM och versionshantering.",
+    detail: "Vi byggde spelet i Vanilla JS med moduler, DOM-manipulation och Firestore. Jag ansvarade för modal-hantering, användarflöde och versionhantering i Git. Vi jobbade agilt med Trello och sprintar.",
     points: [
-      "🖱️ DOM-manipulering",
-      "🎯 Eventlyssnare",
-      "⏱️ Timers och timeouts",
-      "🔊 Audio API och bilder",
-      "📊 Modal-fönster och topplista"
+      "🖱️ DOM-manipulering med vanilla JS",
+      "🎯 Eventlyssnare och klicklogik",
+      "⏱️ Timers, setTimeout och countdown-funktioner",
+      "📊 Topplista via Firebase Firestore",
+      "🧩 Modulstruktur med ES6-import/export",
+      "🔊 Ljud via <audio> och trigger-effekter",
+      "📦 Dynamisk rendering av mullvadar",
+      "📝 Modal för namninput och validering",
+      "🛠️ Realtidsuppdatering via onSnapshot",
+      "🗃️ Versionshantering med Git och branches",
+      "🗂️ Uppgiftsplanering i Trello"
     ],
-    badges: ["JavaScript", "HTML", "CSS", "Lokala Assets"],
-    note: "Whack-a-mole-spel byggt i grupp med fokus på samarbete och versionshantering."
+    badges: [
+      "JavaScript", "HTML", "CSS", "Firebase", "Firestore", "ES6 Modules",
+      "Audio API", "DOM", "Agil metod", "Trello", "Git"
+    ],
+    note: "Whack-a-mole-spel byggt i grupp med fokus på samarbete, moduler, versionshantering och realtids-Firebase."
   }
 };

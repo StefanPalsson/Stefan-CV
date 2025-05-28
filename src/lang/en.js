@@ -24,8 +24,8 @@ export default {
   strengthTab: "Strengths",
   projects: "Projects",
   techAndMethods: "Technologies & Methods",
-  showDetails: "\u25bc Show technologies & methods",
-  hideDetails: "\u25b2 Hide technologies & methods",
+  showDetails: "▼ Show technologies & methods",
+  hideDetails: "▲ Hide technologies & methods",
   meditation: "Music upload, offline support, Firebase.",
   langSwitchText: "Change language",
   tekniker: {
@@ -70,15 +70,20 @@ export default {
   },
   whack: {
     desc: "Group project with leaderboard, UI, and backend.",
-    detail: "We built the game in Vanilla JS, and I focused on modals, DOM manipulation, and Git collaboration.",
+    detail: "Built in modular JavaScript with Firebase, sound, DOM manipulation and real-time score updates using Firestore.",
     points: [
-      "🖱️ DOM manipulation",
-      "🎯 Event listeners",
-      "⏱️ Timers and timeouts",
-      "🔊 Audio API and image assets",
-      "📊 Modals and leaderboard"
+      "🧩 Modular JavaScript (import/export)",
+      "📦 Firebase Firestore integration",
+      "🕹️ DOM manipulation & event listeners",
+      "🎯 Scoring logic and reaction timing",
+      "📜 Form validation & user feedback",
+      "🔥 Real-time updates with onSnapshot",
+      "📊 Dynamic Top 10 leaderboard",
+      "🎵 Audio integration and CSS animations",
+      "📋 Agile development using Trello",
+      "🎨 Custom CSS layout with grid"
     ],
-    badges: ["JavaScript", "HTML", "CSS", "Local Assets"],
-    note: "Whack-a-mole game built as a team project focusing on collaboration and version control."
+    note: "A group-built game project developed with agile workflows and clear role division.",
+    badges: ["JavaScript", "DOM", "Modules", "Firebase", "Firestore", "CSS", "HTML", "Event Listeners", "Trello"]
   }
 };

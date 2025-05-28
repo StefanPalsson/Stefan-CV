@@ -370,6 +370,14 @@ body {
   animation: pulseText 2s ease-in-out infinite;
 }
 
+/* === Specifik stil för Whack-a-Mole-bild === */
+.whack-img {
+  width: 30%; /* eller prova 40% eller 300px beroende på vad som ser bäst ut */
+  max-width: 300px;
+  height: auto;
+}
+
+
 @keyframes pulseText {
   0%, 100% {
     opacity: 1;
