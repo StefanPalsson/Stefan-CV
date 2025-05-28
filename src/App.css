@@ -235,6 +235,16 @@ body {
   color: #1a3c58;
 }
 
+.project-container.todo {
+  background-color: #3e4c59; /* Mörk neutral ton */
+}
+
+.project-container.todo .project-box {
+  background-color: #f3f3f3;
+  color: #1a1a1a;
+}
+
+
 
 .project-title {
   font-size: 1.3rem;

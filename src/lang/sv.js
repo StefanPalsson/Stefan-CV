@@ -106,5 +106,23 @@ export default {
     ],
     note: "Byggd för att bevara och visa upp familjens resor och ögonblick.",
     badges: ["React", "TypeScript", "React Router", "Dark Mode", "UX/UI", "Responsiv Design"]
+  },
+  todo: {
+    desc: "Grupprojekt: säker todo-API med C# och ASP.NET.",
+    detail: "Byggt i grupp med ASP.NET Core Identity, rollbaserad åtkomst, Entity Framework Core och PostgreSQL. Alla endpoints skyddas med policies och JWT-bearer tokens.",
+    points: [
+      "🔐 ASP.NET Core Identity för autentisering",
+      "🔑 Rollbaserad behörighet (admin, user)",
+      "🔒 JWT-bearer token för säker åtkomst",
+      "🎯 Separering av logik i service- och controllerlager",
+      "🗃️ Entity Framework Core (EF Core) med PostgreSQL",
+      "📦 ApplicationContext med DbSets och dependency injection",
+      "📋 Egna DTOs för output",
+      "🧪 Swagger UI för testning av endpoints",
+      "🔄 CRUD API med REST-struktur",
+      "👥 Grupparbete med Git"
+    ],
+    note: "Byggt med verklighetsnära struktur, säkerhet och tydlig rollfördelning.",
+    badges: ["C#", ".NET 8", "ASP.NET Core", "EF Core", "PostgreSQL", "JWT", "Identity", "Swagger", "REST API", "Git"]
   }
 };

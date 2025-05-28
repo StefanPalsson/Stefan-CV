@@ -11,6 +11,7 @@ export default function App() {
   const [showLeontinaDetails, setShowLeontinaDetails] = useState(false);
   const [showWhackDetails, setShowWhackDetails] = useState(false);
   const [showTime4FamilyDetails, setShowTime4FamilyDetails] = useState(false);
+  const [showTodoDetails, setShowTodoDetails] = useState(false);
   const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
 
   const t = languages[lang];
@@ -279,6 +280,41 @@ export default function App() {
     <div className="project-image-grid">
       <img src="/time4family.png" alt="Time4Family screenshot 1" />
       <img src="/time4family2.png" alt="Time4Family screenshot 2" />
+    </div>
+  </div>
+</li>
+{/* Todo List Project */}
+<li>
+  <div className="project-container todo">
+    <div className="project-box">
+      <p className="project-title">Todo List</p>
+      <p>{t.todo.desc}</p>
+      <p>{t.todo.detail}</p>
+    </div>
+    <button
+      className="accordion-button"
+      onClick={() => setShowTodoDetails(!showTodoDetails)}
+    >
+      {showTodoDetails ? t.hideDetails : t.showDetails}
+    </button>
+    {showTodoDetails && (
+      <div className="accordion-content todo">
+        <h4>🧪 {t.techAndMethods}</h4>
+        <ul className="tech-icon-list">
+          {t.todo.points.map((p, i) => (
+            <li key={i}>{p}</li>
+          ))}
+        </ul>
+        <p style={{ fontStyle: "italic" }}>{t.todo.note}</p>
+      </div>
+    )}
+    <div className="tech-badges">
+      {t.todo.badges.map((b, i) => (
+        <span key={i}>{b}</span>
+      ))}
+    </div>
+    <div className="project-image-grid">
+      <img src="/todo.png" alt="Todo List preview" />
     </div>
   </div>
 </li>

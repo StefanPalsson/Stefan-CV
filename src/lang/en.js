@@ -102,5 +102,23 @@ export default {
     ],
     note: "Built to preserve and highlight family trips and moments.",
     badges: ["React", "TypeScript", "React Router", "Dark Mode", "UX/UI", "Responsive Design"]
+  },
+   todo: {
+    desc: "Collaborative project: secure todo API with C# and ASP.NET.",
+    detail: "Built in a group using ASP.NET Core Identity with role-based access control, Entity Framework Core with PostgreSQL, and layered architecture. All endpoints are protected via policies and JWT bearer tokens.",
+    points: [
+      "🔐 ASP.NET Core Identity for user authentication",
+      "🔑 Role-based authorization policies (admin, user)",
+      "🛡️ JWT Bearer Token authentication",
+      "🎯 Separation of concerns via Service and Controller layers",
+      "🗃️ Entity Framework Core (EF Core) with PostgreSQL",
+      "📦 ApplicationContext with DbSets and dependency injection",
+      "📜 Custom DTOs for output formatting",
+      "🧪 Swagger UI for testing endpoints",
+      "🔄 CRUD API with RESTful structure",
+      "👥 Group collaboration with Git"
+    ],
+    note: "Built as a team project with real-world structure and secure access handling.",
+    badges: ["C#", ".NET 8", "ASP.NET Core", "EF Core", "PostgreSQL", "JWT", "Identity", "Swagger", "REST API", "Git"]
   }
 };
