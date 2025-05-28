@@ -68,7 +68,7 @@ export default {
     note: "Byggd för berättande och enkel interaktion.",
     badges: ["Angular", "RouterModule", "RouteGuard", "FormsModule", "localStorage", "UX för barn", "Responsiv CSS"]
   },
- whack: {
+  whack: {
     desc: "Grupprojekt med topplista, UI och backend.",
     detail: "Vi byggde spelet i Vanilla JS med moduler, DOM-manipulation och Firestore. Jag ansvarade för modal-hantering, användarflöde och versionhantering i Git. Vi jobbade agilt med Trello och sprintar.",
     points: [
@@ -89,5 +89,22 @@ export default {
       "Audio API", "DOM", "Agil metod", "Trello", "Git"
     ],
     note: "Whack-a-mole-spel byggt i grupp med fokus på samarbete, moduler, versionshantering och realtids-Firebase."
+  },
+  time4family: {
+    desc: "React + TypeScript-app för att dela familjeminnen.",
+    detail: "En familjeapp som följer UX/UI-principer med Z-pattern och lazy loading. Sidor för blog, galleri och kontakt. Byggd med TypeScript, React Router och stöd för mörkt läge.",
+    points: [
+      "🌀 TypeScript med React",
+      "🌗 Dark mode via Context API",
+      "📷 Lazy loaded bilder med `loading='lazy'`",
+      "🧭 Navigering med React Router v6",
+      "🧱 Modulär komponentstruktur",
+      "🎯 Layout enligt Z-pattern",
+      "💡 UX/UI-principer i layout och interaktion",
+      "🎨 CSS-teman och egen stil",
+      "📱 Responsiv design"
+    ],
+    note: "Byggd för att bevara och visa upp familjens resor och ögonblick.",
+    badges: ["React", "TypeScript", "React Router", "Dark Mode", "UX/UI", "Responsiv Design"]
   }
 };

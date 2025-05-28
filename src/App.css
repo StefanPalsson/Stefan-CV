@@ -226,6 +226,16 @@ body {
   background-color: #ff6f00; /* orange för arcade-spelkänsla */
 }
 
+.project-container.time4family {
+  background-color: #4a90e2; /* mild blå nyans */
+}
+
+.project-container.time4family .project-box {
+  background-color: #eaf3fb;
+  color: #1a3c58;
+}
+
+
 .project-title {
   font-size: 1.3rem;
   font-weight: bold;

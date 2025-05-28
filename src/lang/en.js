@@ -85,5 +85,22 @@ export default {
     ],
     note: "A group-built game project developed with agile workflows and clear role division.",
     badges: ["JavaScript", "DOM", "Modules", "Firebase", "Firestore", "CSS", "HTML", "Event Listeners", "Trello"]
+  },
+  time4family: {
+    desc: "React + TypeScript app to share family memories.",
+    detail: "A family web app that follows UX/UI principles like Z-pattern and lazy loading. Includes pages for blog, gallery, and contact. Built with TypeScript, React Router and dark mode support.",
+    points: [
+      "🌀 TypeScript with React",
+      "🌗 Dark mode via Context API",
+      "📷 Lazy loaded images with `loading='lazy'`",
+      "🧭 React Router v6 for navigation",
+      "🧱 Modular component structure",
+      "🎯 Z-pattern layout and readability",
+      "💡 UX/UI principles in layout and interaction",
+      "🎨 CSS styling with custom themes",
+      "📱 Responsive design"
+    ],
+    note: "Built to preserve and highlight family trips and moments.",
+    badges: ["React", "TypeScript", "React Router", "Dark Mode", "UX/UI", "Responsive Design"]
   }
 };

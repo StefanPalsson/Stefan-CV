@@ -10,6 +10,7 @@ export default function App() {
   const [showChiliDetails, setShowChiliDetails] = useState(false);
   const [showLeontinaDetails, setShowLeontinaDetails] = useState(false);
   const [showWhackDetails, setShowWhackDetails] = useState(false);
+  const [showTime4FamilyDetails, setShowTime4FamilyDetails] = useState(false);
   const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
 
   const t = languages[lang];
@@ -245,6 +246,42 @@ export default function App() {
                 </div>
               </div>
             </li>
+            {/* Time4Family */}
+<li>
+  <div className="project-container time4family">
+    <div className="project-box">
+      <p className="project-title">Time4Family</p>
+      <p>{t.time4family.desc}</p>
+      <p>{t.time4family.detail}</p>
+    </div>
+    <button
+      className="accordion-button"
+      onClick={() => setShowTime4FamilyDetails(!showTime4FamilyDetails)}
+    >
+      {showTime4FamilyDetails ? t.hideDetails : t.showDetails}
+    </button>
+    {showTime4FamilyDetails && (
+      <div className="accordion-content time4family">
+        <h4>🧪 {t.techAndMethods}</h4>
+        <ul className="tech-icon-list">
+          {t.time4family.points.map((p, i) => (
+            <li key={i}>{p}</li>
+          ))}
+        </ul>
+        <p style={{ fontStyle: "italic" }}>{t.time4family.note}</p>
+      </div>
+    )}
+    <div className="tech-badges">
+      {t.time4family.badges.map((b, i) => (
+        <span key={i}>{b}</span>
+      ))}
+    </div>
+    <div className="project-image-grid">
+      <img src="/time4family.png" alt="Time4Family screenshot 1" />
+      <img src="/time4family2.png" alt="Time4Family screenshot 2" />
+    </div>
+  </div>
+</li>
           </ul>
         </section>
       </main>
