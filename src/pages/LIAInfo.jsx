@@ -11,15 +11,20 @@ export default function LIAInfo() {
         <p>Under min utbildning har jag haft två LIA-perioder:</p>
 
         <section className="project-box" style={{ marginTop: "2rem" }}>
-          <h2>📍 LIA 1 – Företagsnamn</h2>
+          <h2>📍 LIA 1 – Räckesbutiken, Ängelholm</h2>
           <p>
-            Här arbetade jag med frontendutveckling i React, deltog i dagliga
-            standups och byggde komponenter för interna verktyg.
+            Under min första LIA inledde jag projektet med att skapa mockups i Figma
+            för en inspirations- och köphjälpsguide till Räckesbutiken, som tillverkar och säljer räcken.
+            Projektet realiserades med React och TypeScript och fokuserade på att vägleda kunder
+            till rätt produkt genom ett interaktivt frågeflöde.
           </p>
           <ul>
-            <li>Byggde dashboards i React</li>
-            <li>Fick inblick i agil utveckling (Scrum)</li>
-            <li>Integrerade REST-API:er</li>
+            <li>🎨 Figma-mockups i projektets uppstart</li>
+            <li>⚛️ React + TypeScript</li>
+            <li>🧩 Dynamisk logik via JSON och state</li>
+            <li>📸 Bildkarusell med react-responsive-carousel</li>
+            <li>🧠 useState, useEffect och useCallback</li>
+            <li>💡 Fokus på UX och enkel navigering</li>
           </ul>
         </section>
 

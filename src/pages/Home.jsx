@@ -4,7 +4,6 @@ import en from "../lang/en";
 import sv from "../lang/sv";
 import { Link } from "react-router-dom";
 
-
 const languages = { en, sv };
 
 export default function Home() {
@@ -99,50 +98,36 @@ export default function Home() {
         <section>
           <h2>{t.skills}</h2>
           <div className="tab-buttons" style={{ flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>
-  <div className="tab-wrapper">
-    <span className="finger-icon">👉</span>
-    <button
-  onClick={() => setActiveTab("tekniker")}
-  className={`accordion-button nav-button ${activeTab === "tekniker" ? "active" : ""}`}
->
-  🧪 {t.techTab}
-</button>
-<span className="finger-icon">👉</span>
-<button
-  onClick={() => setActiveTab("styrkor")}
-  className={`accordion-button nav-button ${activeTab === "styrkor" ? "active" : ""}`}
->
-  💪 {t.strengthTab}
-</button>
-
-  </div>
-  <div className="tab-wrapper">
-    <span className="finger-icon">👉</span>
-    <Link to="/lia-info">
-  <button className="accordion-button nav-button">
-    🛠️ {t.liaButton}
-  </button>
-</Link>
-  </div>
-  <div className="tab-wrapper">
-    <span className="finger-icon">👉</span>
-    <Link to="/work-history">
-  <button className="accordion-button nav-button">
-    💼 {t.workButton}
-  </button>
-</Link>
-  </div>
-</div>
-
-
+            <div className="tab-wrapper">
+              <span className="finger-icon">👉</span>
+              <button
+                onClick={() => setActiveTab("tekniker")}
+                className={`accordion-button nav-button ${activeTab === "tekniker" ? "active" : ""}`}
+              >
+                🧪 {t.techTab}
+              </button>
+              <span className="finger-icon">👉</span>
+              <button
+                onClick={() => setActiveTab("styrkor")}
+                className={`accordion-button nav-button ${activeTab === "styrkor" ? "active" : ""}`}
+              >
+                💪 {t.strengthTab}
+              </button>
+              <span className="finger-icon">👉</span>
+              <button
+                onClick={() => setActiveTab("lia")}
+                className={`accordion-button nav-button ${activeTab === "lia" ? "active" : ""}`}
+              >
+                🛠️ {t.liaButton}
+              </button>
+            </div>
+          </div>
 
           <div className="tech-tags">
             {activeTab === "tekniker"
               ? Object.entries(t.tekniker).map(([kategori, tags]) => (
                   <div key={kategori} style={{ marginBottom: "1rem", width: "100%" }}>
-                    <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>
-                      {kategori}
-                    </h3>
+                    <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>{kategori}</h3>
                     <div className="tech-badge-container">
                       {tags.map((tag, index) => (
                         <button key={index}>{tag}</button>
@@ -150,11 +135,50 @@ export default function Home() {
                     </div>
                   </div>
                 ))
-              : t.styrkor.map((item, index) => (
+              : activeTab === "styrkor"
+              ? t.styrkor.map((item, index) => (
                   <button key={index}>{item}</button>
-                ))}
+                ))
+              : activeTab === "lia" && (
+                <div className="lia-info">
+                  <h3>📍 LIA 1 – Räckesbutiken, Ängelholm</h3>
+                  <p>
+                    Under min första LIA inledde jag projektet med att skapa mockups i Figma för en
+                    inspirations- och köphjälpsguide till Räckesbutiken, som tillverkar och säljer räcken.
+                    Projektet realiserades med React och TypeScript och fokuserade på att vägleda kunder
+                    till rätt produkt genom ett interaktivt frågeflöde.
+                  </p>
+                  <ul>
+                    <li>🧪 Frågebaserat guidningsflöde</li>
+                    <li>🖼️ Produktbilder med bildgalleri</li>
+                    <li>🌟 3D-konfiguratorlänkning</li>
+                    <li>💬 Kontaktformulär i modal</li>
+                    <li>🎨 Figma-mockups i projektets uppstart</li>
+                    <li>⚛️ React + TypeScript</li>
+                    <li>🧩 Dynamisk logik via JSON och state</li>
+                    <li>📸 Bildkarusell med react-responsive-carousel</li>
+                    <li>🧠 useState, useEffect och useCallback</li>
+                    <li>💡 Fokus på UX och enkel navigering</li>
+                  </ul>
+
+                  <h3>📍 LIA 2 – Linespotting</h3>
+                  <p>
+                    Under LIA 2 på Linespotting fick jag arbeta med en mobil meditationsapp byggd i React Native. Appen skulle låta användare lyssna på lugnande ljudspår och även möjliggöra egen uppladdning av meditationsmusik.
+                    Jag ansvarade för flera centrala funktioner och lärde mig mycket om mobil utveckling och hur man bygger för en bra användarupplevelse även offline.
+                  </p>
+                  <ul>
+                    <li>📱 React Native (0.72 → 0.76)</li>
+                    <li>📦 Implementerade nedladdning & offline-uppspelning av tracks</li>
+                    <li>🔊 Användaruppladdning av meditationsmusik</li>
+                    <li>🧩 Firebase-konfiguration för autentisering & mediahantering</li>
+                    <li>⚙️ State management med React Hooks</li>
+                    <li>🌙 Fokus på minimalistiskt, lugnt UI & UX</li>
+                  </ul>
+                </div>
+              )}
           </div>
         </section>
+
 
         <section className="project-section">
           <h2>{t.projects}</h2>
