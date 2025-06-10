@@ -141,20 +141,38 @@ export default function Home() {
                 ))
               : activeTab === "lia" && (
                 <div className="lia-info">
-                  <h3>📍 {t.lia1.desc}</h3>
-                  <p>{t.lia1.detail}</p>
+                  <h3>📍 LIA 1 – Räckesbutiken, Ängelholm</h3>
+                  <p>
+                    Under min första LIA inledde jag projektet med att skapa mockups i Figma för en
+                    inspirations- och köphjälpsguide till Räckesbutiken, som tillverkar och säljer räcken.
+                    Projektet realiserades med React och TypeScript och fokuserade på att vägleda kunder
+                    till rätt produkt genom ett interaktivt frågeflöde.
+                  </p>
                   <ul>
-                    {t.lia1.points.map((p, i) => (
-                      <li key={i}>{p}</li>
-                    ))}
+                    <li>🧪 Frågebaserat guidningsflöde</li>
+                    <li>🖼️ Produktbilder med bildgalleri</li>
+                    <li>🌟 3D-konfiguratorlänkning</li>
+                    <li>💬 Kontaktformulär i modal</li>
+                    <li>🎨 Figma-mockups i projektets uppstart</li>
+                    <li>⚛️ React + TypeScript</li>
+                    <li>🧩 Dynamisk logik via JSON och state</li>
+                    <li>📸 Bildkarusell med react-responsive-carousel</li>
+                    <li>🧠 useState, useEffect och useCallback</li>
+                    <li>💡 Fokus på UX och enkel navigering</li>
                   </ul>
 
-                  <h3>📍 {t.lia2.desc}</h3>
-                  <p>{t.lia2.detail}</p>
+                  <h3>📍 LIA 2 – Linespotting</h3>
+                  <p>
+                    Under LIA 2 på Linespotting fick jag arbeta med en mobil meditationsapp byggd i React Native. Appen skulle låta användare lyssna på lugnande ljudspår och även möjliggöra egen uppladdning av meditationsmusik.
+                    Jag ansvarade för flera centrala funktioner och lärde mig mycket om mobil utveckling och hur man bygger för en bra användarupplevelse även offline.
+                  </p>
                   <ul>
-                    {t.lia2.points.map((p, i) => (
-                      <li key={i}>{p}</li>
-                    ))}
+                    <li>📱 React Native (0.72 → 0.76)</li>
+                    <li>📦 Implementerade nedladdning & offline-uppspelning av tracks</li>
+                    <li>🔊 Användaruppladdning av meditationsmusik</li>
+                    <li>🧩 Firebase-konfiguration för autentisering & mediahantering</li>
+                    <li>⚙️ State management med React Hooks</li>
+                    <li>🌙 Fokus på minimalistiskt, lugnt UI & UX</li>
                   </ul>
                 </div>
               )}
