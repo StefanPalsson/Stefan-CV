@@ -97,26 +97,35 @@ export default function Home() {
 
         <section>
           <h2>{t.skills}</h2>
-          <div className="tab-buttons" style={{ flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>
+          <div
+            className="tab-buttons"
+            style={{ flexWrap: "wrap", gap: "1rem", alignItems: "center" }}
+          >
             <div className="tab-wrapper">
               <span className="finger-icon">👉</span>
               <button
                 onClick={() => setActiveTab("tekniker")}
-                className={`accordion-button nav-button ${activeTab === "tekniker" ? "active" : ""}`}
+                className={`accordion-button nav-button ${
+                  activeTab === "tekniker" ? "active" : ""
+                }`}
               >
                 🧪 {t.techTab}
               </button>
               <span className="finger-icon">👉</span>
               <button
                 onClick={() => setActiveTab("styrkor")}
-                className={`accordion-button nav-button ${activeTab === "styrkor" ? "active" : ""}`}
+                className={`accordion-button nav-button ${
+                  activeTab === "styrkor" ? "active" : ""
+                }`}
               >
                 💪 {t.strengthTab}
               </button>
               <span className="finger-icon">👉</span>
               <button
                 onClick={() => setActiveTab("lia")}
-                className={`accordion-button nav-button ${activeTab === "lia" ? "active" : ""}`}
+                className={`accordion-button nav-button ${
+                  activeTab === "lia" ? "active" : ""
+                }`}
               >
                 🛠️ {t.liaButton}
               </button>
@@ -126,8 +135,13 @@ export default function Home() {
           <div className="tech-tags">
             {activeTab === "tekniker"
               ? Object.entries(t.tekniker).map(([kategori, tags]) => (
-                  <div key={kategori} style={{ marginBottom: "1rem", width: "100%" }}>
-                    <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>{kategori}</h3>
+                  <div
+                    key={kategori}
+                    style={{ marginBottom: "1rem", width: "100%" }}
+                  >
+                    <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>
+                      {kategori}
+                    </h3>
                     <div className="tech-badge-container">
                       {tags.map((tag, index) => (
                         <button key={index}>{tag}</button>
@@ -140,45 +154,26 @@ export default function Home() {
                   <button key={index}>{item}</button>
                 ))
               : activeTab === "lia" && (
-                <div className="lia-info">
-                  <h3>📍 LIA 1 – Räckesbutiken, Ängelholm</h3>
-                  <p>
-                    Under min första LIA inledde jag projektet med att skapa mockups i Figma för en
-                    inspirations- och köphjälpsguide till Räckesbutiken, som tillverkar och säljer räcken.
-                    Projektet realiserades med React och TypeScript och fokuserade på att vägleda kunder
-                    till rätt produkt genom ett interaktivt frågeflöde.
-                  </p>
-                  <ul>
-                    <li>🧪 Frågebaserat guidningsflöde</li>
-                    <li>🖼️ Produktbilder med bildgalleri</li>
-                    <li>🌟 3D-konfiguratorlänkning</li>
-                    <li>💬 Kontaktformulär i modal</li>
-                    <li>🎨 Figma-mockups i projektets uppstart</li>
-                    <li>⚛️ React + TypeScript</li>
-                    <li>🧩 Dynamisk logik via JSON och state</li>
-                    <li>📸 Bildkarusell med react-responsive-carousel</li>
-                    <li>🧠 useState, useEffect och useCallback</li>
-                    <li>💡 Fokus på UX och enkel navigering</li>
-                  </ul>
+  <div className="lia-info">
+    <h3>{t.lia.lia1.title}</h3>
+    <p>{t.lia.lia1.description}</p>
+    <ul>
+      {t.lia.lia1.points.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
 
-                  <h3>📍 LIA 2 – Linespotting</h3>
-                  <p>
-                    Under LIA 2 på Linespotting fick jag arbeta med en mobil meditationsapp byggd i React Native. Appen skulle låta användare lyssna på lugnande ljudspår och även möjliggöra egen uppladdning av meditationsmusik.
-                    Jag ansvarade för flera centrala funktioner och lärde mig mycket om mobil utveckling och hur man bygger för en bra användarupplevelse även offline.
-                  </p>
-                  <ul>
-                    <li>📱 React Native (0.72 → 0.76)</li>
-                    <li>📦 Implementerade nedladdning & offline-uppspelning av tracks</li>
-                    <li>🔊 Användaruppladdning av meditationsmusik</li>
-                    <li>🧩 Firebase-konfiguration för autentisering & mediahantering</li>
-                    <li>⚙️ State management med React Hooks</li>
-                    <li>🌙 Fokus på minimalistiskt, lugnt UI & UX</li>
-                  </ul>
-                </div>
-              )}
+    <h3>{t.lia.lia2.title}</h3>
+    <p>{t.lia.lia2.description}</p>
+    <ul>
+      {t.lia.lia2.points.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  </div>
+)}
           </div>
         </section>
-
 
         <section className="project-section">
           <h2>{t.projects}</h2>
@@ -288,117 +283,123 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="project-image-grid">
-                  <img src="/whack-a-mole2.png" alt="Whack-a-Mole preview" className="whack-img" />
+                  <img
+                    src="/whack-a-mole2.png"
+                    alt="Whack-a-Mole preview"
+                    className="whack-img"
+                  />
                 </div>
               </div>
             </li>
             {/* Time4Family */}
-<li>
-  <div className="project-container time4family">
-    <div className="project-box">
-      <p className="project-title">Time4Family</p>
-      <p>{t.time4family.desc}</p>
-      <p>{t.time4family.detail}</p>
-    </div>
-    <button
-      className="accordion-button"
-      onClick={() => setShowTime4FamilyDetails(!showTime4FamilyDetails)}
-    >
-      {showTime4FamilyDetails ? t.hideDetails : t.showDetails}
-    </button>
-    {showTime4FamilyDetails && (
-      <div className="accordion-content time4family">
-        <h4>🧪 {t.techAndMethods}</h4>
-        <ul className="tech-icon-list">
-          {t.time4family.points.map((p, i) => (
-            <li key={i}>{p}</li>
-          ))}
-        </ul>
-        <p style={{ fontStyle: "italic" }}>{t.time4family.note}</p>
-      </div>
-    )}
-    <div className="tech-badges">
-      {t.time4family.badges.map((b, i) => (
-        <span key={i}>{b}</span>
-      ))}
-    </div>
-    <div className="project-image-grid">
-      <img src="/time4family.png" alt="Time4Family screenshot 1" />
-      <img src="/time4family2.png" alt="Time4Family screenshot 2" />
-    </div>
-  </div>
-</li>
-{/* Todo List Project */}
-<li>
-  <div className="project-container todo">
-    <div className="project-box">
-      <p className="project-title">Todo List</p>
-      <p>{t.todo.desc}</p>
-      <p>{t.todo.detail}</p>
-    </div>
-    <button
-      className="accordion-button"
-      onClick={() => setShowTodoDetails(!showTodoDetails)}
-    >
-      {showTodoDetails ? t.hideDetails : t.showDetails}
-    </button>
-    {showTodoDetails && (
-      <div className="accordion-content todo">
-        <h4>🧪 {t.techAndMethods}</h4>
-        <ul className="tech-icon-list">
-          {t.todo.points.map((p, i) => (
-            <li key={i}>{p}</li>
-          ))}
-        </ul>
-        <p style={{ fontStyle: "italic" }}>{t.todo.note}</p>
-      </div>
-    )}
-    <div className="tech-badges">
-      {t.todo.badges.map((b, i) => (
-        <span key={i}>{b}</span>
-      ))}
-    </div>
-    <div className="project-image-grid">
-      <img src="/todo.png" alt="Todo List preview" />
-    </div>
-  </div>
-</li>
-{/* Mini Reddit Clone */}
-<li>
-  <div className="project-container reddit">
-    <div className="project-box">
-      <p className="project-title">Mini Reddit Clone</p>
-      <p>{t.reddit.desc}</p>
-      <p>{t.reddit.detail}</p>
-    </div>
-    <button
-      className="accordion-button"
-      onClick={() => setShowRedditDetails(!showRedditDetails)}
-    >
-      {showRedditDetails ? t.hideDetails : t.showDetails}
-    </button>
-    {showRedditDetails && (
-      <div className="accordion-content reddit">
-        <h4>🧪 {t.techAndMethods}</h4>
-        <ul className="tech-icon-list">
-          {t.reddit.points.map((p, i) => (
-            <li key={i}>{p}</li>
-          ))}
-        </ul>
-        <p style={{ fontStyle: "italic" }}>{t.reddit.note}</p>
-      </div>
-    )}
-    <div className="tech-badges">
-      {t.reddit.badges.map((b, i) => (
-        <span key={i}>{b}</span>
-      ))}
-    </div>
-    <div className="project-image-grid">
-      <img src="/mini-reddit.png" alt="Mini Reddit Clone preview" />
-    </div>
-  </div>
-</li>
- {/* Weather App */}
+            <li>
+              <div className="project-container time4family">
+                <div className="project-box">
+                  <p className="project-title">Time4Family</p>
+                  <p>{t.time4family.desc}</p>
+                  <p>{t.time4family.detail}</p>
+                </div>
+                <button
+                  className="accordion-button"
+                  onClick={() =>
+                    setShowTime4FamilyDetails(!showTime4FamilyDetails)
+                  }
+                >
+                  {showTime4FamilyDetails ? t.hideDetails : t.showDetails}
+                </button>
+                {showTime4FamilyDetails && (
+                  <div className="accordion-content time4family">
+                    <h4>🧪 {t.techAndMethods}</h4>
+                    <ul className="tech-icon-list">
+                      {t.time4family.points.map((p, i) => (
+                        <li key={i}>{p}</li>
+                      ))}
+                    </ul>
+                    <p style={{ fontStyle: "italic" }}>{t.time4family.note}</p>
+                  </div>
+                )}
+                <div className="tech-badges">
+                  {t.time4family.badges.map((b, i) => (
+                    <span key={i}>{b}</span>
+                  ))}
+                </div>
+                <div className="project-image-grid">
+                  <img src="/time4family.png" alt="Time4Family screenshot 1" />
+                  <img src="/time4family2.png" alt="Time4Family screenshot 2" />
+                </div>
+              </div>
+            </li>
+            {/* Todo List Project */}
+            <li>
+              <div className="project-container todo">
+                <div className="project-box">
+                  <p className="project-title">Todo List</p>
+                  <p>{t.todo.desc}</p>
+                  <p>{t.todo.detail}</p>
+                </div>
+                <button
+                  className="accordion-button"
+                  onClick={() => setShowTodoDetails(!showTodoDetails)}
+                >
+                  {showTodoDetails ? t.hideDetails : t.showDetails}
+                </button>
+                {showTodoDetails && (
+                  <div className="accordion-content todo">
+                    <h4>🧪 {t.techAndMethods}</h4>
+                    <ul className="tech-icon-list">
+                      {t.todo.points.map((p, i) => (
+                        <li key={i}>{p}</li>
+                      ))}
+                    </ul>
+                    <p style={{ fontStyle: "italic" }}>{t.todo.note}</p>
+                  </div>
+                )}
+                <div className="tech-badges">
+                  {t.todo.badges.map((b, i) => (
+                    <span key={i}>{b}</span>
+                  ))}
+                </div>
+                <div className="project-image-grid">
+                  <img src="/todo.png" alt="Todo List preview" />
+                </div>
+              </div>
+            </li>
+            {/* Mini Reddit Clone */}
+            <li>
+              <div className="project-container reddit">
+                <div className="project-box">
+                  <p className="project-title">Mini Reddit Clone</p>
+                  <p>{t.reddit.desc}</p>
+                  <p>{t.reddit.detail}</p>
+                </div>
+                <button
+                  className="accordion-button"
+                  onClick={() => setShowRedditDetails(!showRedditDetails)}
+                >
+                  {showRedditDetails ? t.hideDetails : t.showDetails}
+                </button>
+                {showRedditDetails && (
+                  <div className="accordion-content reddit">
+                    <h4>🧪 {t.techAndMethods}</h4>
+                    <ul className="tech-icon-list">
+                      {t.reddit.points.map((p, i) => (
+                        <li key={i}>{p}</li>
+                      ))}
+                    </ul>
+                    <p style={{ fontStyle: "italic" }}>{t.reddit.note}</p>
+                  </div>
+                )}
+                <div className="tech-badges">
+                  {t.reddit.badges.map((b, i) => (
+                    <span key={i}>{b}</span>
+                  ))}
+                </div>
+                <div className="project-image-grid">
+                  <img src="/mini-reddit.png" alt="Mini Reddit Clone preview" />
+                </div>
+              </div>
+            </li>
+            {/* Weather App */}
             <li>
               <div className="project-container weather">
                 <div className="project-box">
