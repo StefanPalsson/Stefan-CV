@@ -2,7 +2,6 @@ import "../App.css";
 import { useState } from "react";
 import en from "../lang/en";
 import sv from "../lang/sv";
-import { Link } from "react-router-dom";
 
 const languages = { en, sv };
 
@@ -97,81 +96,62 @@ export default function Home() {
 
         <section>
           <h2>{t.skills}</h2>
-          <div
-            className="tab-buttons"
-            style={{ flexWrap: "wrap", gap: "1rem", alignItems: "center" }}
-          >
+          <div className="tab-buttons" style={{ flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>
             <div className="tab-wrapper">
               <span className="finger-icon">👉</span>
-              <button
-                onClick={() => setActiveTab("tekniker")}
-                className={`accordion-button nav-button ${
-                  activeTab === "tekniker" ? "active" : ""
-                }`}
-              >
+              <button onClick={() => setActiveTab("tekniker")} className={`accordion-button nav-button ${activeTab === "tekniker" ? "active" : ""}`}>
                 🧪 {t.techTab}
               </button>
               <span className="finger-icon">👉</span>
-              <button
-                onClick={() => setActiveTab("styrkor")}
-                className={`accordion-button nav-button ${
-                  activeTab === "styrkor" ? "active" : ""
-                }`}
-              >
+              <button onClick={() => setActiveTab("styrkor")} className={`accordion-button nav-button ${activeTab === "styrkor" ? "active" : ""}`}>
                 💪 {t.strengthTab}
               </button>
               <span className="finger-icon">👉</span>
-              <button
-                onClick={() => setActiveTab("lia")}
-                className={`accordion-button nav-button ${
-                  activeTab === "lia" ? "active" : ""
-                }`}
-              >
+              <button onClick={() => setActiveTab("lia")} className={`accordion-button nav-button ${activeTab === "lia" ? "active" : ""}`}>
                 🛠️ {t.liaButton}
               </button>
             </div>
           </div>
 
           <div className="tech-tags">
-            {activeTab === "tekniker"
-              ? Object.entries(t.tekniker).map(([kategori, tags]) => (
-                  <div
-                    key={kategori}
-                    style={{ marginBottom: "1rem", width: "100%" }}
-                  >
-                    <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>
-                      {kategori}
-                    </h3>
-                    <div className="tech-badge-container">
-                      {tags.map((tag, index) => (
-                        <button key={index}>{tag}</button>
-                      ))}
-                    </div>
+            {activeTab === "tekniker" &&
+              Object.entries(t.tekniker).map(([kategori, tags]) => (
+                <div key={kategori} style={{ marginBottom: "1rem", width: "100%" }}>
+                  <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>{kategori}</h3>
+                  <div className="tech-badge-container">
+                    {tags.map((tag, index) => (
+                      <button key={index}>{tag}</button>
+                    ))}
                   </div>
-                ))
-              : activeTab === "styrkor"
-              ? t.styrkor.map((item, index) => (
-                  <button key={index}>{item}</button>
-                ))
-              : activeTab === "lia" && (
-  <div className="lia-info">
-    <h3>{t.lia.lia1.title}</h3>
-    <p>{t.lia.lia1.description}</p>
-    <ul>
-      {t.lia.lia1.points.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
+                </div>
+              ))}
 
-    <h3>{t.lia.lia2.title}</h3>
-    <p>{t.lia.lia2.description}</p>
-    <ul>
-      {t.lia.lia2.points.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
-  </div>
-)}
+            {activeTab === "styrkor" &&
+              t.styrkor.map((item, index) => (
+                <button key={index}>{item}</button>
+              ))}
+
+            {activeTab === "lia" && (
+              <div className="lia-info">
+                <h3>📍 LIA 1</h3>
+                <p>{t.lia.lia1.desc}</p>
+                <p>{t.lia.lia1.detail}</p>
+                <ul>
+                  {t.lia.lia1.points.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+
+                <h3>📍 LIA 2</h3>
+                <p>{t.lia.lia2.desc}</p>
+                <p>{t.lia.lia2.detail}</p>
+                <ul>
+                  {t.lia.lia2.points.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </section>
 
