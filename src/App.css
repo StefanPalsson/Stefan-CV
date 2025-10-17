@@ -656,3 +656,55 @@ button:focus,
   }
 }
 
+/* =========================
+   FIX: Tabs + Finger + Badges
+   ========================= */
+
+/* Gör badges robusta: behåll form, wrap mellan badges, aldrig klippt text */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tags button,
+.tech-badges span {
+  display: inline-flex;            /* bättre boxmodell än inline */
+  align-items: center;
+  line-height: 1.3;                /* undvik att text/bakgrund klipper varandra */
+  white-space: nowrap;             /* ingen radbrytning inne i en badge */
+}
+
+/* Extra säkerhet när utrymmet är riktigt tight */
+@supports (overflow-wrap: anywhere) {
+  .tech-tags { row-gap: 0.5rem; column-gap: 0.5rem; }
+}
+
+/* --- Mobil: lägg finger till vänster om varje knapp --- */
+@media (max-width: 768px) {
+  /* Grid med 2 kolumner: [👉][knapp] i varje rad */
+  .tab-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 0.6rem; /* rad-gap / kolumn-gap */
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Fingret i kolumn 1, knappar i kolumn 2 (sker naturligt pga DOM-ordning) */
+  .finger-icon {
+    font-size: 1.25rem;    /* aningen mindre på mobil */
+    line-height: 1;        /* kompakt */
+  }
+
+  .nav-button {
+    width: 100%;           /* fyll raden bredvid fingret */
+    min-width: 0;          /* tillåt krymp */
+    padding: 0.55rem 1rem; /* lite smalare så allt får plats */
+    justify-content: center;
+  }
+
+  /* Ta bort ev. “flex: 1” från tidigare regler när vi kör grid */
+  .tab-buttons .nav-button { flex: initial; }
+}
+
