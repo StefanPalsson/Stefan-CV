@@ -708,3 +708,18 @@ button:focus,
   .tab-buttons .nav-button { flex: initial; }
 }
 
+/* XS-förbättringar för supersmå skärmar */
+@media (max-width: 360px) {
+  .nav-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .tech-tags button,
+  .tech-badges span {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+  }
+  .about-section { padding: 1rem; }
+  .course-box { padding: 0.9rem; }
+}
