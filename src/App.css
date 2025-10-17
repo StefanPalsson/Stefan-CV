@@ -9,7 +9,11 @@ body {
 .cv-wrapper {
   display: flex;
   min-height: 100vh;
+  overflow-x: hidden;
 }
+
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; }
 
 /* === Sidebar === */
 .sidebar {
@@ -179,7 +183,6 @@ body {
   gap: 0.5rem;
 }
 
-
 .tab-wrapper {
   display: flex;
   align-items: center;
@@ -289,9 +292,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
-
-
 
 .project-title {
   font-size: 1.3rem;
@@ -439,7 +439,7 @@ body {
 
 /* === Specifik stil för Whack-a-Mole-bild === */
 .whack-img {
-  width: 30%; /* eller prova 40% eller 300px beroende på vad som ser bäst ut */
+  width: 30%;
   max-width: 300px;
   height: auto;
 }
@@ -448,16 +448,9 @@ a {
   text-decoration: none;
 }
 
-
 @keyframes pulseText {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.04);
-  }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.04); }
 }
 
 /* === Tillgänglighet: Fokus-stöd === */
@@ -467,15 +460,199 @@ button:focus,
   outline-offset: 2px;
 }
 
-/* === Mobilanpassning === */
-@media (max-width: 600px) {
-  .course-wrapper {
-    flex-direction: column;
-    align-items: center;
+/* =========================
+   RESPONSIVE LAYOUT
+   ========================= */
+
+/* XL–L (<=1200px) */
+@media (max-width: 1200px) {
+  .main-content { padding: 1.5rem; }
+  .about-section { max-width: 100%; }
+  .project-box { max-width: 100%; }
+  .project-image-grid img { width: 49%; }
+}
+
+/* M (<=992px) */
+@media (max-width: 992px) {
+  .cv-wrapper { flex-direction: column; }
+
+  .sidebar {
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    padding: 1.5rem 1rem;
   }
 
-  .tab-buttons {
-    flex-direction: column;
-    align-items: flex-start;
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 1rem auto;
+    display: block;
+  }
+
+  .sidebar section { text-align: left; max-width: 680px; margin: 0.75rem auto; }
+
+  .main-content { padding: 1.5rem 1rem; }
+
+  .about-wrapper { margin-left: 0; gap: 1rem; }
+  .course-box { max-width: 100%; }
+  .lang-switch-wrapper { margin-top: .5rem; }
+
+  .tab-buttons { gap: .6rem; }
+  .nav-button { min-width: 0; padding: .5rem .9rem; font-size: .95rem; }
+
+  .project-container { padding: 1.25rem; }
+  .project-title { font-size: 1.15rem; }
+}
+
+/* S (<=768px) */
+@media (max-width: 768px) {
+  .name { font-size: 1.6rem; }
+  .title { font-size: 1.05rem; }
+  .about-section h2 { font-size: 1.5rem; }
+  .about-section { padding: 1.25rem; line-height: 1.7; }
+
+  .about-wrapper { flex-direction: column; align-items: stretch; }
+
+  .tech-tags { gap: .4rem; }
+  .tech-badge-container { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .tech-tags button,
+  .tech-badges span { font-size: .85rem; padding: .35rem .7rem; }
+
+  .project-image-grid { gap: .75rem; }
+  .project-image-grid img { width: 100%; }
+
+  .whack-img { width: 100%; max-width: 520px; }
+
+  .flag-icon { width: 34px; height: 34px; }
+  .finger-icon { font-size: 1.3rem; }
+  .lang-label { font-size: .95rem; }
+}
+
+/* XS (<=480px) */
+@media (max-width: 480px) {
+  .sidebar { padding: 1rem .75rem; }
+  .main-content { padding: 1rem .75rem; }
+
+  .name { font-size: 1.45rem; }
+  .title { font-size: 1rem; }
+  .school, .sidebar p, .sidebar li { font-size: .95rem; }
+
+  .accordion-button {
+    width: 100%;
+    text-align: center;
+    padding: .65rem 1rem;
+    font-size: .95rem;
+  }
+
+  .tab-buttons { width: 100%; }
+  .tab-wrapper { width: 100%; flex-wrap: wrap; }
+  .nav-button { flex: 1 1 auto; }
+
+  .course-box { padding: 1rem; }
+  .project-container { padding: 1rem; margin-bottom: 2rem; }
+  .project-title { font-size: 1.05rem; }
+
+  .tab-buttons button:hover,
+  .accordion-button:hover { transform: none; }
+}
+/* ===== Sticky sidebar på desktop ===== */
+@media (min-width: 993px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .mobile-bar { display: none; }
+  .close-menu { display: none; }
+}
+
+/* ===== Mobil top-bar + off-canvas sidebar ===== */
+.mobile-bar {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  /* Top-bar som alltid syns överst */
+  .mobile-bar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #b6d5e4;
+    padding: 0.75rem 1rem;
+    z-index: 600;
+    border-bottom: 1px solid #c8dbe6;
+  }
+
+  .menu-button {
+    background: #2c3e50;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.55rem 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .mobile-lang .flag-icon { width: 32px; height: 32px; }
+
+  /* Off-canvas sidebar */
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    padding-top: 3.25rem; /* plats för close-knapp */
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .close-menu {
+    display: block;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background: #f9dc5c;
+    color: #1b2a35;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.35rem 0.6rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  /* Skugga bakom menyn */
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 900;
+  }
+
+  /* Dölj desktop-språkknappen i kursboxen på mobil (vi har den i top-baren) */
+  .desktop-lang { display: none; }
+}
+
+/* Fyll vänsterkolumnen med mörkblå bakgrund hela sidans höjd */
+@media (min-width: 993px) {
+  .cv-wrapper {
+    background: linear-gradient(
+      to right,
+      #2c3e50 0,
+      #2c3e50 300px,
+      #b6d5e4 300px,
+      #b6d5e4 100%
+    );
   }
 }
+

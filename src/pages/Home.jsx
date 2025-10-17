@@ -7,6 +7,8 @@ const languages = { en, sv };
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("tekniker");
+
+  // Accordions
   const [showChiliDetails, setShowChiliDetails] = useState(false);
   const [showLeontinaDetails, setShowLeontinaDetails] = useState(false);
   const [showWhackDetails, setShowWhackDetails] = useState(false);
@@ -14,8 +16,9 @@ export default function Home() {
   const [showTodoDetails, setShowTodoDetails] = useState(false);
   const [showRedditDetails, setShowRedditDetails] = useState(false);
   const [showWeatherDetails, setShowWeatherDetails] = useState(false);
-  const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
 
+  // Språk
+  const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
   const t = languages[lang];
 
   const switchLanguage = () => {
@@ -24,9 +27,47 @@ export default function Home() {
     localStorage.setItem("lang", newLang);
   };
 
+  // Mobilmeny (öppna/stäng sidebar)
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="cv-wrapper">
-      <aside className="sidebar">
+      {/* Mobil top-bar */}
+      <div className="mobile-bar">
+        <button
+          className="menu-button"
+          aria-label="Open menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(true)}
+        >
+          ☰ Meny
+        </button>
+
+        <div className="mobile-lang">
+          <img
+            src={lang === "en" ? "/flags/se.svg" : "/flags/gb.svg"}
+            alt={lang === "en" ? "Svenska" : "English"}
+            className="flag-icon"
+            onClick={switchLanguage}
+            role="button"
+            tabIndex={0}
+          />
+        </div>
+      </div>
+
+      {/* Overlay vid öppen meny */}
+      {menuOpen && <div className="backdrop" onClick={() => setMenuOpen(false)} />}
+
+      <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
+        {/* Stäng-knapp syns bara på mobil */}
+        <button
+          className="close-menu"
+          aria-label="Close menu"
+          onClick={() => setMenuOpen(false)}
+        >
+          ✕
+        </button>
+
         <img src="/jag2.jpg" alt="Stefan Pålsson" className="profile-pic" />
         <h1 className="name">Stefan Pålsson</h1>
         <h1 className="title">{t.title}</h1>
@@ -59,7 +100,7 @@ export default function Home() {
         </section>
       </aside>
 
-      <main className="main-content">
+      <main className="main-content" onClick={() => menuOpen && setMenuOpen(false)}>
         <section className="about-wrapper">
           <section className="about-section">
             <h2>👨‍💻 {t.aboutTitle}</h2>
@@ -79,7 +120,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="lang-switch-wrapper">
+            <div className="lang-switch-wrapper desktop-lang">
               <span className="finger-icon">👉</span>
               <img
                 src={lang === "en" ? "/flags/se.svg" : "/flags/gb.svg"}
@@ -96,18 +137,36 @@ export default function Home() {
 
         <section>
           <h2>{t.skills}</h2>
-          <div className="tab-buttons" style={{ flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>
+          <div
+            className="tab-buttons"
+            style={{ flexWrap: "wrap", gap: "1rem", alignItems: "center" }}
+          >
             <div className="tab-wrapper">
               <span className="finger-icon">👉</span>
-              <button onClick={() => setActiveTab("tekniker")} className={`accordion-button nav-button ${activeTab === "tekniker" ? "active" : ""}`}>
+              <button
+                onClick={() => setActiveTab("tekniker")}
+                className={`accordion-button nav-button ${
+                  activeTab === "tekniker" ? "active" : ""
+                }`}
+              >
                 🧪 {t.techTab}
               </button>
               <span className="finger-icon">👉</span>
-              <button onClick={() => setActiveTab("styrkor")} className={`accordion-button nav-button ${activeTab === "styrkor" ? "active" : ""}`}>
+              <button
+                onClick={() => setActiveTab("styrkor")}
+                className={`accordion-button nav-button ${
+                  activeTab === "styrkor" ? "active" : ""
+                }`}
+              >
                 💪 {t.strengthTab}
               </button>
               <span className="finger-icon">👉</span>
-              <button onClick={() => setActiveTab("lia")} className={`accordion-button nav-button ${activeTab === "lia" ? "active" : ""}`}>
+              <button
+                onClick={() => setActiveTab("lia")}
+                className={`accordion-button nav-button ${
+                  activeTab === "lia" ? "active" : ""
+                }`}
+              >
                 🛠️ {t.liaButton}
               </button>
             </div>
@@ -117,7 +176,9 @@ export default function Home() {
             {activeTab === "tekniker" &&
               Object.entries(t.tekniker).map(([kategori, tags]) => (
                 <div key={kategori} style={{ marginBottom: "1rem", width: "100%" }}>
-                  <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>{kategori}</h3>
+                  <h3 style={{ marginBottom: "0.5rem", color: "#2c3e50" }}>
+                    {kategori}
+                  </h3>
                   <div className="tech-badge-container">
                     {tags.map((tag, index) => (
                       <button key={index}>{tag}</button>
@@ -127,9 +188,7 @@ export default function Home() {
               ))}
 
             {activeTab === "styrkor" &&
-              t.styrkor.map((item, index) => (
-                <button key={index}>{item}</button>
-              ))}
+              t.styrkor.map((item, index) => <button key={index}>{item}</button>)}
 
             {activeTab === "lia" && (
               <div className="lia-info">
@@ -184,7 +243,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="tech-badges">
-                  {t.chili.badges.map((b, i) => (
+                  {t.chili.badges?.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
@@ -221,7 +280,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="tech-badges">
-                  {t.leontina.badges.map((b, i) => (
+                  {t.leontina.badges?.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
@@ -258,7 +317,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="tech-badges">
-                  {t.whack.badges.map((b, i) => (
+                  {t.whack.badges?.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
@@ -271,6 +330,7 @@ export default function Home() {
                 </div>
               </div>
             </li>
+
             {/* Time4Family */}
             <li>
               <div className="project-container time4family">
@@ -281,9 +341,7 @@ export default function Home() {
                 </div>
                 <button
                   className="accordion-button"
-                  onClick={() =>
-                    setShowTime4FamilyDetails(!showTime4FamilyDetails)
-                  }
+                  onClick={() => setShowTime4FamilyDetails(!showTime4FamilyDetails)}
                 >
                   {showTime4FamilyDetails ? t.hideDetails : t.showDetails}
                 </button>
@@ -299,7 +357,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="tech-badges">
-                  {t.time4family.badges.map((b, i) => (
+                  {t.time4family.badges?.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
@@ -309,7 +367,8 @@ export default function Home() {
                 </div>
               </div>
             </li>
-            {/* Todo List Project */}
+
+            {/* Todo */}
             <li>
               <div className="project-container todo">
                 <div className="project-box">
@@ -335,7 +394,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="tech-badges">
-                  {t.todo.badges.map((b, i) => (
+                  {t.todo.badges?.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
@@ -344,7 +403,8 @@ export default function Home() {
                 </div>
               </div>
             </li>
-            {/* Mini Reddit Clone */}
+
+            {/* Mini Reddit */}
             <li>
               <div className="project-container reddit">
                 <div className="project-box">
@@ -370,7 +430,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="tech-badges">
-                  {t.reddit.badges.map((b, i) => (
+                  {t.reddit.badges?.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
@@ -379,7 +439,8 @@ export default function Home() {
                 </div>
               </div>
             </li>
-            {/* Weather App */}
+
+            {/* Weather */}
             <li>
               <div className="project-container weather">
                 <div className="project-box">
@@ -405,7 +466,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="tech-badges">
-                  {t.weather.badges.map((b, i) => (
+                  {t.weather.badges?.map((b, i) => (
                     <span key={i}>{b}</span>
                   ))}
                 </div>
